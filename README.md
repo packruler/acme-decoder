@@ -11,7 +11,7 @@ this in the [Traefik Let's Encrypt Documentation](https://doc.traefik.io/traefik
 
 ## Simple Run
 
-Run `docker run -v <dir containing acme.json>:/data packruler/acme-exporter`
+Run `docker run -v <dir containing acme.json>:/data ghcr.io/packruler/acme-exporter`
 
 ## Result
 
