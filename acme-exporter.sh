@@ -1,9 +1,14 @@
 #! /bin/sh
 
-USER=$(stat -c '%u' acme.json)
-GROUP=$(stat -c '%g' acme.json)
+file_path=${1:-acme.json}
 
-file_path=$1
+if [ ! -f "$file_path" ]; then
+    echo "Unable to access '$file_path'."
+    return 1
+fi
+
+USER=$(stat -c '%u' $1)
+GROUP=$(stat -c '%g' $1)
 
 if [ ! -d certs ]; then
     mkdir certs
