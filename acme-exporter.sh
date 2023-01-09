@@ -1,10 +1,9 @@
 #! /bin/sh
 
-USER=$(stat -c '%U' acme.json)
-GROUP=$(stat -c '%G' acme.json)
+USER=$(stat -c '%u' acme.json)
+GROUP=$(stat -c '%g' acme.json)
 
 file_path=$1
-
 
 if [ ! -d certs ]; then
     mkdir certs
